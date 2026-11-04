@@ -1,6 +1,7 @@
 import { H2 } from "@/components/ui/atoms/heading/heading2";
 import { P } from "@/components/ui/atoms/text/Text";
 import { BlurFade } from "@/components/ui/Effects/blur-fade";
+import FindPropertyAction from "@/components/actions/forms/places/FindProperty.action";
 
 const LeftSideHero = () => {
 	return (
@@ -16,6 +17,9 @@ const LeftSideHero = () => {
 					Verified Listing, Connect With Trusted Agents, And Find Places You
 					Love.
 				</P>
+			</BlurFade>
+			<BlurFade delay={0.2} onlyOnce={false} inView className="w-full">
+				<FindPropertyAction />
 			</BlurFade>
 		</div>
 	);
