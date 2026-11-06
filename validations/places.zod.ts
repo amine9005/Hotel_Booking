@@ -4,9 +4,11 @@ import { z } from "zod";
 
 export const placeNameValidation = z
 	.string()
-	.min(3, { message: "Place Name must be at least 3 char longs" });
+	.min(3, { message: "Please Enter A Location" });
 
-export const placeTypeValidation = z.enum(propertyType);
+export const placeTypeValidation = z.enum(propertyType, {
+	message: "Please Select A Property Type",
+});
 
 export const findPlaceSchema = z.object({
 	placeName: placeNameValidation,

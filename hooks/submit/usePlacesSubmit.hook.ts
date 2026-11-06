@@ -11,6 +11,7 @@ export function useFindPropertySubmit(form: FindPlaceFormType) {
 	const onSubmit: SubmitHandler<FindPlaceSchemaType> = useCallback(
 		async (data) => {
 			setLoading(false);
+			console.log("data: ", data);
 		},
 		[],
 	);

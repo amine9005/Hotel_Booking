@@ -22,14 +22,12 @@ const routeList: RouteProps[] = [
 const BuyerNavItems = () => {
 	return routeList.map((route: RouteProps, i) => (
 		<NavigationMenuItem key={i}>
-			<NavigationMenuLink asChild className="hover:bg-transparent ">
-				<Link
-					rel="noreferrer noopener"
-					href={route.href}
-					className="text-[17px] hover:scale-105 transition-transform duration-200 hover:text-primary"
-				>
-					{route.label}
-				</Link>
+			<NavigationMenuLink
+				rel="noreferrer noopener"
+				href={route.href}
+				className="text-[17px] hover:scale-105 transition-transform duration-200 hover:text-primary hover:bg-transparent"
+			>
+				{route.label}
 			</NavigationMenuLink>
 		</NavigationMenuItem>
 	));

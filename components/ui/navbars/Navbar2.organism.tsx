@@ -41,22 +41,20 @@ const Navbar2Organism = () => {
 			className={`sticky border-b top-0 z-50 w-full dark:border-b-primary overflow-x-hidden
       bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60 min-h-15`}
 		>
-			<NavigationMenu className="flex overflow-hidden flex-col items-center justify-center">
-				<NavigationMenuList className="px-2 md:px-12 w-screen min-h-14 flex justify-between lg:grid lg:grid-cols-3 ">
+			<NavigationMenu className="flex max-w-full w-full overflow-hidden flex-col items-center justify-center">
+				<NavigationMenuList className=" w-full  min-h-14 flex justify-between lg:grid lg:grid-cols-3 ">
 					<NavigationMenuItem className="font-bold ">
 						<Logo />
 					</NavigationMenuItem>
 					<NavigationMenuList className="hidden lg:flex gap-2 col-span-1">
 						{routeList.map((route: RouteProps, i) => (
 							<NavigationMenuItem key={i}>
-								<NavigationMenuLink asChild className="hover:bg-transparent ">
-									<Link
-										rel="noreferrer noopener"
-										href={route.href}
-										className="text-[17px] hover:scale-105 transition-transform duration-200 hover:text-primary"
-									>
-										{route.label}
-									</Link>
+								<NavigationMenuLink
+									rel="noreferrer noopener"
+									href={route.href}
+									className="hover:bg-transparent text-[17px] hover:scale-105 transition-transform duration-200 hover:text-primary"
+								>
+									{route.label}
 								</NavigationMenuLink>
 							</NavigationMenuItem>
 						))}
@@ -97,46 +95,40 @@ const Navbar2Organism = () => {
 					<NavigationMenuList className="lg:hidden flex flex-col justify-center items-center">
 						{routeList.map((route: RouteProps, i) => (
 							<NavigationMenuItem key={i}>
-								<NavigationMenuLink asChild>
-									<Link
-										onClick={() => setIsOpen(false)}
-										rel="noreferrer noopener"
-										href={route.href}
-										className={`text-[17px] ${buttonVariants({
-											variant: "ghost",
-										})}`}
-									>
-										{route.label}
-									</Link>
+								<NavigationMenuLink
+									onClick={() => setIsOpen(false)}
+									rel="noreferrer noopener"
+									href={route.href}
+									className={`text-[17px] ${buttonVariants({
+										variant: "ghost",
+									})}`}
+								>
+									{route.label}
 								</NavigationMenuLink>
 							</NavigationMenuItem>
 						))}
 						<NavigationMenuItem className="">
-							<NavigationMenuLink asChild>
-								<Link
-									onClick={() => setIsOpen(false)}
-									className={buttonVariants({
-										variant: "default",
-										size: "sm",
-										width: "lg",
-									})}
-									href={link}
-								>
-									{text}
-								</Link>
+							<NavigationMenuLink
+								onClick={() => setIsOpen(false)}
+								className={buttonVariants({
+									variant: "default",
+									size: "sm",
+									width: "lg",
+								})}
+								href={link}
+							>
+								{text}
 							</NavigationMenuLink>
 						</NavigationMenuItem>
 						{user && (
 							<>
 								<NavigationMenuItem>
-									<NavigationMenuLink asChild className="hover:bg-transparent ">
-										<Link
-											rel="noreferrer noopener"
-											href={"/trips"}
-											className="text-[17px] hover:scale-105 transition-transform duration-200 hover:text-primary"
-										>
-											My Trips
-										</Link>
+									<NavigationMenuLink
+										className="hover:bg-transparent text-[17px] hover:scale-105 transition-transform duration-200 hover:text-primary"
+										rel="noreferrer noopener"
+										href={"/trips"}
+									>
+										My Trips
 									</NavigationMenuLink>
 								</NavigationMenuItem>
 								<Button

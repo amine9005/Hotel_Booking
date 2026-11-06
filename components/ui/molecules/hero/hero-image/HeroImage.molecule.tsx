@@ -4,7 +4,7 @@ import { BlurImageMolecule } from "@/components/ui/molecules/blur-image/BlurImag
 
 const HeroImageMolecule = () => {
 	return (
-		<BlurFade delay={0.5} onlyOnce={false} inView className="w-full">
+		<BlurFade delay={0.5} onlyOnce={false} inView className="w-full col-span-2">
 			<FormLayout>
 				<BlurImageMolecule
 					alt="Hero Image"

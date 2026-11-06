@@ -43,8 +43,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 					inter.variable,
 				)}
 			>
-				<body className="min-h-full flex flex-col px-2 md:px-4 lg:px-8">
-					{children}
+				<body className="min-h-full flex items-center justify-center flex-col px-2 md:px-4 lg:px-8">
+					<div className=" min-h-full max-w-11/12 ">{children}</div>
 				</body>
 			</html>
 			<Footer1Organism />
