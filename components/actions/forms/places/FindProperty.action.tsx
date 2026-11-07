@@ -10,6 +10,7 @@ const FindPropertyAction = () => {
 
 	return (
 		<FindPropertyOrganism
+			loading={loading}
 			form={form}
 			formName="find-property"
 			handle_submit={handleSubmit(onSubmit)}

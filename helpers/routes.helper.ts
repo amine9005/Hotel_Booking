@@ -25,6 +25,7 @@ export const apiPaths = {
 			Locations: "/api/places/locations",
 		},
 		POST: {
+			Search: "/api/places/search",
 			GOOGLE: "/api/places/google/place-details",
 		},
 	},
