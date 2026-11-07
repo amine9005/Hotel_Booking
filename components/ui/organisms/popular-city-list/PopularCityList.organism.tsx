@@ -4,8 +4,8 @@ import {
 	Carousel,
 } from "@/components/ui/organisms/carousels/apple-cards-carousel";
 import PopularCityDialog from "@/components/ui/organisms/dialog/PopularCity.dialog";
-import { BlurFade } from "../../Effects/blur-fade";
-import { PopularCityListData } from "../../constants/trip-planner/TripPlanner.constants";
+import { BlurFade } from "@/components/ui/Effects/blur-fade";
+import { PopularCityListData } from "@/constants/trip-planner/TripPlanner.constants";
 
 export function PopularCityListOrganism() {
 	const data = PopularCityListData.map((item) => ({

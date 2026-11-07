@@ -48,7 +48,7 @@ const Categories = () => {
 	};
 
 	return (
-		<div className="container min-h-screen">
+		<div className="container my-8 lg:my-15">
 			<motion.div
 				variants={popup_variant}
 				initial="hidden"
@@ -57,11 +57,11 @@ const Categories = () => {
 				className="text-center"
 			>
 				<H2 className="text-slate-700 text-[42px] text-semiBold">
-					Powerful AI Tools
+					Browse By Category
 				</H2>
 				<P className="text-gray-500 max-w-lg mx-auto">
-					Everything you need to get an quick and accurate health advice form
-					the our best AI models.{" "}
+					Explore curated collections of properties tailored to your specific
+					lifestyle and needs.
 				</P>
 			</motion.div>
 			<motion.div
@@ -69,7 +69,7 @@ const Categories = () => {
 				initial="hidden"
 				whileInView="visible"
 				viewport={{ amount: 0.2 }}
-				className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-20 px-4 md:px-12 lg:px-16"
+				className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20 px-4 md:px-12 lg:px-16"
 			>
 				{APP_FEATURES.map((feature) => (
 					<motion.div key={feature.id} variants={card_variant}>
