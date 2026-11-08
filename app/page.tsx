@@ -1,5 +1,5 @@
 import Categories from "@/components/actions/catagories";
-import PropertyCard from "@/components/ui/organisms/cards/Property.card";
+import { FeaturedPropertiesOrganism } from "@/components/ui/organisms/Featured/Featured.organism";
 import TwoSectionsHero from "@/components/ui/organisms/Heros/Hero-1/TwoSections.hero";
 import { PopularCityListOrganism } from "@/components/ui/organisms/popular-city-list/PopularCityList.organism";
 
@@ -9,7 +9,7 @@ export default function Home() {
 			<TwoSectionsHero />
 			<Categories />
 			<PopularCityListOrganism />
-			<PropertyCard />
+			<FeaturedPropertiesOrganism />
 		</div>
 	);
 }
