@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { BlurImageMolecule } from "@/components/ui/molecules/blur-image/BlurImage.molecule";
 import { P } from "@/components/ui/atoms/text/Text";
 import { Bath, BedDouble, Expand, Eye, Heart, MapPin } from "lucide-react";
@@ -7,10 +6,7 @@ import LoadingSubmitButtonMolecule from "@/components/ui/molecules/loading-submi
 // Featured
 const PropertyCard = () => {
 	return (
-		<Link
-			href={"/PROPERTY_ID"}
-			className=" flex group flex-col rounded-4xl h-140 max-h-140 dark:bg-secondary transition-all duration-300 hover:-translate-y-2 overflow-hidden"
-		>
+		<div className=" flex group flex-col rounded-4xl h-120 max-h-120 dark:bg-secondary transition-all duration-300 hover:-translate-y-2 overflow-hidden">
 			<div className="relative overflow-hidden max-w-120 max-h-60 h-60 w-full">
 				<div className="absolute w-full z-5 p-4 flex items-center justify-between">
 					<div className="flex gap-2">
@@ -19,7 +15,7 @@ const PropertyCard = () => {
 						</div>
 					</div>
 
-					<Heart className="size-10 text-white fill-white hover:text-red-400 duration-400 transition-all" />
+					<Heart className="size-10 hover:cursor-pointer text-white fill-white hover:text-red-400 duration-400 transition-all" />
 				</div>
 				<BlurImageMolecule
 					alt="PROPERTY_NAME"
@@ -46,7 +42,7 @@ const PropertyCard = () => {
 					<MapPin className="text-primary" /> PROPERTY ADDRESS
 				</div>
 
-				<div className="grid grid-cols-3 p-8">
+				<div className="grid grid-cols-3 p-3">
 					<div className="flex flex-col justify-center items-center space-y-2">
 						<BedDouble className="size-8" />
 						<P>3</P>
@@ -73,7 +69,7 @@ const PropertyCard = () => {
 					View Details
 				</LoadingSubmitButtonMolecule>
 			</div>
-		</Link>
+		</div>
 	);
 };
 

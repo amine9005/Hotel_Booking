@@ -53,7 +53,7 @@ const Categories = () => {
 				variants={popup_variant}
 				initial="hidden"
 				whileInView="visible"
-				viewport={{ amount: 0.8 }}
+				viewport={{ amount: 0.7 }}
 				className="text-center"
 			>
 				<H2 className="text-slate-700 text-[42px] text-semiBold">
