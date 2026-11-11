@@ -1,44 +1,82 @@
 import {
-  Field,
-  FieldError,
-  FieldLabel,
+	Field,
+	FieldError,
+	FieldLabel,
 } from "@/components/ui/atoms/field/field";
 import { Input } from "@/components/ui/atoms/input/input";
 import { FieldValues } from "react-hook-form";
 
 interface Item {
-  name: string;
-  labelTitle?: React.ReactNode;
-  type?: string;
-  placeholder?: string;
-  autoComplete: string;
+	name: string;
+	labelTitle?: React.ReactNode;
+	type?: string;
+	placeholder?: string;
+	autoComplete: string;
 }
 interface Props {
-  item: Item;
-  field: FieldValues;
-  fieldState: {
-    invalid: boolean;
-    isTouched: boolean;
-    isDirty: boolean;
-    isValidating: boolean;
-    error?: { message?: string | undefined } | undefined;
-  };
+	item: Item;
+	field: FieldValues;
+	fieldState: {
+		invalid: boolean;
+		isTouched: boolean;
+		isDirty: boolean;
+		isValidating: boolean;
+		error?: { message?: string | undefined } | undefined;
+	};
 }
 const InputField = ({ item, field, fieldState }: Props) => {
-  return (
-    <Field data-invalid={fieldState.invalid}>
-      <FieldLabel htmlFor={`form-${item.name}`}>{item.labelTitle}</FieldLabel>
-      <Input
-        {...field}
-        id={`form-${item.name}`}
-        type={item.type}
-        aria-invalid={fieldState.invalid}
-        placeholder={item.placeholder}
-        autoComplete={item.autoComplete}
-      />
-      {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
-    </Field>
-  );
+	return (
+		<Field data-invalid={fieldState.invalid}>
+			<FieldLabel htmlFor={`form-${item.name}`}>{item.labelTitle}</FieldLabel>
+			<Input
+				{...field}
+				id={`form-${item.name}`}
+				type={item.type}
+				aria-invalid={fieldState.invalid}
+				placeholder={item.placeholder}
+				autoComplete={item.autoComplete}
+			/>
+			{fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+		</Field>
+	);
 };
 
 export default InputField;
+
+export const InputFieldNoLabel = ({ item, field, fieldState }: Props) => {
+	return (
+		<Field data-invalid={fieldState.invalid}>
+			<Input
+				{...field}
+				id={`form-${item.name}`}
+				type={item.type}
+				aria-invalid={fieldState.invalid}
+				placeholder={item.placeholder}
+				autoComplete={item.autoComplete}
+			/>
+			{fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+		</Field>
+	);
+};
+
+export const InputFieldLeftLabel = ({ item, field, fieldState }: Props) => {
+	return (
+		<Field
+			className="grid grid-cols-5 w-full items-center justify-center gap-2"
+			data-invalid={fieldState.invalid}
+		>
+			<FieldLabel htmlFor={`form-${item.name}`}>{item.labelTitle}</FieldLabel>
+
+			<Input
+				className="col-span-4"
+				{...field}
+				id={`form-${item.name}`}
+				type={item.type}
+				aria-invalid={fieldState.invalid}
+				placeholder={item.placeholder}
+				autoComplete={item.autoComplete}
+			/>
+			{fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+		</Field>
+	);
+};

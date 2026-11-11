@@ -5,7 +5,7 @@ import { FieldGroup } from "@/components/ui/atoms/field/field";
 import { Controller } from "react-hook-form";
 import { FindPlaceFormType } from "@/validations/places.zod";
 import SelectField from "@/components/ui/atoms/select-field/SelectField.molecule";
-import { propertyType } from "@/types/placeType.types";
+import { propertyType } from "@/types/property.types";
 import LoadingSubmitButtonMolecule from "@/components/ui/molecules/loading-submit-button/loadingSubmitButton.molecule";
 
 interface Props {

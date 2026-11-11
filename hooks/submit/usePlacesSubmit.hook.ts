@@ -7,7 +7,10 @@ import { useCallback, useState } from "react";
 import { SubmitHandler } from "react-hook-form";
 import { useFindPropertyMutation } from "../mutations/usePlaces.mutation";
 
-export function useFindPropertySubmit(form: FindPlaceFormType) {
+export function useFindPropertySubmit(
+	form: FindPlaceFormType,
+	type: "simple" | "advanced" = "simple",
+) {
 	const [loading, setLoading] = useState(false);
 	const setPlaceName = useSearchParamsStore((state) => state.setPlaceName);
 	const setPlaceType = useSearchParamsStore((state) => state.setPlaceType);

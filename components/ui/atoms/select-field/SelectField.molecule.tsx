@@ -41,7 +41,9 @@ const SelectField = ({ item, field, fieldState, onSelectChange }: Props) => {
 			<Select
 				{...field}
 				onValueChange={(e) =>
-					onSelectChange ? onSelectChange(e) : item.form.setValue(item.name, e)
+					onSelectChange
+						? onSelectChange(e as string)
+						: item.form.setValue(item.name, e)
 				}
 				aria-invalid={fieldState.invalid}
 			>
@@ -62,3 +64,36 @@ const SelectField = ({ item, field, fieldState, onSelectChange }: Props) => {
 };
 
 export default SelectField;
+
+export const SelectFieldNoLabel = ({
+	item,
+	field,
+	fieldState,
+	onSelectChange,
+}: Props) => {
+	return (
+		<Field data-invalid={fieldState.invalid}>
+			<Select
+				{...field}
+				onValueChange={(e) =>
+					onSelectChange
+						? onSelectChange(e as string)
+						: item.form.setValue(item.name, e)
+				}
+				aria-invalid={fieldState.invalid}
+			>
+				<SelectTrigger className="w-45">
+					<SelectValue placeholder={item.placeholder} />
+				</SelectTrigger>
+				<SelectContent>
+					{item.options.map((value, idx) => (
+						<SelectItem key={idx} value={value}>
+							{value}
+						</SelectItem>
+					))}
+				</SelectContent>
+			</Select>
+			{fieldState.invalid && <FieldError errors={[fieldState.error]} />}
+		</Field>
+	);
+};

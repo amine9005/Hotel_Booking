@@ -8,7 +8,7 @@ export const useFindPropertyForm = () => {
 		resolver: zodResolver(findPlaceSchema),
 		defaultValues: {
 			placeName: "",
-			placeType: "",
+			placeType: "All Properties",
 		},
 	});
 
