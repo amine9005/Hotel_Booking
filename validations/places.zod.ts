@@ -15,27 +15,32 @@ export const placeTypeValidation = z.enum(propertyType, {
 	message: "Please Select A Property Type",
 });
 
-export const lowPriceValidation = z.number().min(0).nullable();
+export const lowPriceValidation = z
+	.number({
+		message: "Please Enter A Valid Number",
+	})
+	.min(0)
+	.nullish();
 
-export const highPriceValidation = z.number().min(0).nullable();
+export const highPriceValidation = z.number().min(0).nullish();
 
 export const bedNumberValidation = z
 	.enum(bedNumberOptions, {
-		message: "Please Select Number Of Beds",
+		message: "Please Enter A Valid Number",
 	})
-	.nullable();
+	.nullish();
 
 export const bathsNumberValidation = z
 	.enum(bathsNumberOptions, {
 		message: "Please Select Number Of Baths",
 	})
-	.nullable();
+	.nullish();
 
 export const furnishingValidation = z
 	.enum(furnishingOptions, {
 		message: "Please Select Furnishing",
 	})
-	.nullable();
+	.nullish();
 
 export const findPlaceSchema = z
 	.object({

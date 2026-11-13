@@ -10,7 +10,7 @@ import { MapPin } from "lucide-react";
 import LoadingSubmitButtonMolecule from "@/components/ui/molecules/loading-submit-button/loadingSubmitButton.molecule";
 import { SelectFieldNoLabel } from "@/components/ui/atoms/select-field/SelectField.molecule";
 import { propertyType } from "@/types/property.types";
-import { P } from "@/components/ui/atoms/text/Text";
+import AdvancedFiltersDialog from "../../../actions/dialog/AdvancedFilters.dialog";
 interface Props {
 	form: FindPlaceFormType;
 	handle_submit: (formEvent: SyntheticEvent) => void;
@@ -123,9 +123,13 @@ const AdvancedFindPropertyOrganism = ({
 						)}
 					/>
 					<div className="flex justify-center items-center">
-						<P className="text-md font-semibold text-primary text-center underline hover:cursor-pointer">
-							More Filters
-						</P>
+						<AdvancedFiltersDialog
+							form={form}
+							formName={formName}
+							handle_submit={handle_submit}
+							loading={loading}
+							title="Advanced Filters"
+						/>
 					</div>
 				</div>
 			</FieldGroup>

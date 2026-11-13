@@ -20,6 +20,7 @@ export const widthOptions = {
 	fit: "w-fit",
 	lg: "w-40",
 	md: "w-30",
+	md_or_full: "lg:w-30 w-full",
 };
 
 export type WidthOptions = keyof typeof widthOptions;

@@ -12,8 +12,6 @@ import {
 	SelectValue,
 } from "@/components/ui/atoms/select/select";
 
-import { UseFormReturn } from "react-hook-form";
-
 interface Item {
 	name: string;
 	labelTitle?: React.ReactNode;
@@ -36,10 +34,13 @@ interface Props {
 }
 const SelectField = ({ item, field, fieldState, onSelectChange }: Props) => {
 	return (
-		<Field data-invalid={fieldState.invalid}>
-			<FieldLabel htmlFor={`form-${item.name}`}>{item.labelTitle}</FieldLabel>
+		<Field className="z-100" data-invalid={fieldState.invalid}>
+			<FieldLabel className="z-100" htmlFor={`form-${item.name}`}>
+				{item.labelTitle}
+			</FieldLabel>
 			<Select
 				{...field}
+
 				onValueChange={(e) =>
 					onSelectChange
 						? onSelectChange(e as string)
@@ -52,7 +53,7 @@ const SelectField = ({ item, field, fieldState, onSelectChange }: Props) => {
 				</SelectTrigger>
 				<SelectContent>
 					{item.options.map((value, idx) => (
-						<SelectItem key={idx} value={value}>
+						<SelectItem className={"z-100"} key={idx} value={value}>
 							{value}
 						</SelectItem>
 					))}
